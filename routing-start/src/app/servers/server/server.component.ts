@@ -19,5 +19,9 @@ export class ServerComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(Number(id) || 1);
+
+    this.route.params.subscribe((value: Params) => {
+      this.server = this.serversService.getServer(Number(value['id']) || 1);
+    });
   }
 }
