@@ -80,6 +80,7 @@ export class HeroService {
       catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
+  
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
