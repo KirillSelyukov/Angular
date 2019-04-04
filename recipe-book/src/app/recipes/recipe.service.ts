@@ -1,6 +1,10 @@
+import { EventEmitter } from '@angular/core';
+
 import { Recipe } from './recipe.model';
 
 export class RecipeService {
+  recipeWasSelected = new EventEmitter<Recipe>();
+
   private recipes: Recipe[] = [
     new Recipe(
       'A test recipe',
@@ -13,7 +17,7 @@ export class RecipeService {
       'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/fusilli-salad-with-grilled-chicken-and-zucchini-xl-200308.jpg?itok=FzuPP-Os',
     ),
   ];
-  getRecipes(){
+  getRecipes() {
     return this.recipes.slice();
   }
 }
