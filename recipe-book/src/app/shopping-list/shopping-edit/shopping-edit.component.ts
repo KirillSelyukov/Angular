@@ -50,7 +50,6 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       this.service.addIngredient(newIngredient);
     }
     this.form.reset();
-
   }
 
   clearFrom() {
